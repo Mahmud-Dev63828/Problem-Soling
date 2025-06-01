@@ -57,11 +57,38 @@ const ProblemSolving = () => {
   /* Write a function findLargest(arr) that returns the largest number in an array.
    */
   //  ? Answer
-  const findLargest = (arr) => {
-    return Math.max(...arr);
+  // const findLargest = (arr) => {
+  //   return Math.max(...arr);
+  // };
+
+  // console.log(findLargest([3, 7, 2, 9, 22, 5]));
+  //! Problem 5: Sum of Numbers in an Array
+  /* Write a function sumArray(arr) that returns the sum of all numbers in an array.
+   */
+  //  ? Answer
+  // const sumArray = (arr) => {
+  //   return arr.reduce((accumulator, currentValue, currentIndex, array) => {
+  //     return accumulator + currentValue;
+  //   });
+  // };
+  // console.log(sumArray([1, 2, 3, 4]));
+  //! Problem 6: Palindrome Checker
+  /* Write a function isPalindrome(str) that checks if a string is a palindrome.
+     (A palindrome reads the same backward as forward)
+     Ignore case sensitivity and spaces.
+   */
+  //  ? Answer
+
+  const isPalindrome = (str) => {
+    const cleanedStr = str.toLowerCase().replace(/[^a-z0-9]/g, "");
+    const reversedStr = cleanedStr.split("").reverse().join("");
+    return cleanedStr === reversedStr;
   };
 
-  console.log(findLargest([3, 7, 2, 9, 22, 5]));
+  console.log(isPalindrome("madam"));
+  console.log(isPalindrome("Racecar"));
+  console.log(isPalindrome("Race car"));
+  console.log(isPalindrome("hello"));
 
   return <div>Problem solving</div>;
 };
