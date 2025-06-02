@@ -79,17 +79,37 @@ const ProblemSolving = () => {
    */
   //  ? Answer
 
-  const isPalindrome = (str) => {
-    const cleanedStr = str.toLowerCase().replace(/[^a-z0-9]/g, "");
-    const reversedStr = cleanedStr.split("").reverse().join("");
-    return cleanedStr === reversedStr;
+  // const isPalindrome = (str) => {
+  //   const cleanedStr = str.toLowerCase().replace(/[^a-z0-9]/g, "");
+  //   const reversedStr = cleanedStr.split("").reverse().join("");
+  //   return cleanedStr === reversedStr;
+  // };
+
+  // console.log(isPalindrome("madam"));
+  // console.log(isPalindrome("Racecar"));
+  // console.log(isPalindrome("Race car"));
+  // console.log(isPalindrome("hello"));
+
+  //! Problem 7: Find the Longest Word in a Sentence
+  /* Write a function findLongestWord(str) that returns the longest word in a sentence.
+   */
+  //  ? Answer
+  const findLongestWord = (str) => {
+    const words = str.split(" ");
+    let longestWord = "";
+
+    for (let word of words) {
+      if (word.length > longestWord.length) {
+        longestWord = word;
+      }
+    }
+
+    return longestWord;
   };
-
-  console.log(isPalindrome("madam"));
-  console.log(isPalindrome("Racecar"));
-  console.log(isPalindrome("Race car"));
-  console.log(isPalindrome("hello"));
-
+  const sentence = "The quick brown fox jumps over the lazy dog";
+  const longest = findLongestWord(sentence);
+  console.log("Longest word:", longest);
+  // !  day 6
   return <div>Problem solving</div>;
 };
 
